@@ -22,12 +22,12 @@ export class UserService {
         let headers = new Headers ({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.post('http://localhost:1978/register', JSON.stringify(oUser), options)
+        return this.http.post('http://localhost:1978/api/register', JSON.stringify(oUser), options)
             .map((response: Response) => response.json())
             .catch(this.handleError);
     }
 
-    getUser(userid) {
+    getUser(userid, oUser) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', `${this.jwtToken}`);

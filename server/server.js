@@ -42,13 +42,13 @@ app.get('/', function(req, res) {
 	res.send('Expense Watch API is running at http://localhost:' + port + '/api');
 });
 
-app.post('/register', user.signup);
+// app.post('/register', user.signup);
 
 // express router
 var apiRoutes = express.Router();
 
 app.use('/api', apiRoutes);
-
+apiRoutes.post('/register', user.signup);
 apiRoutes.post('/login', user.login);
 
 apiRoutes.use(user.authenticate); // route middleware to authenticate and check token
