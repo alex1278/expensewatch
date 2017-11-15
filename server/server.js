@@ -16,7 +16,7 @@ mongoose.connect(config.database, function(err){
 	if(err){
 		console.log('Error connecting database, please check if MongoDB is running.');
 	}else{
-		console.log('Connected to database...');
+		console.log('Connected to database '+config.database);
 	}
 }); 
 

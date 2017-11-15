@@ -12,12 +12,11 @@ export class UserService {
     public jwtToken: string;
 
     constructor(private http: Http) {
-        const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        const theUser: any = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
-    
     register(oUser) {
         let headers = new Headers ({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
@@ -27,7 +26,7 @@ export class UserService {
             .catch(this.handleError);
     }
 
-    getUser(userid, oUser) {
+    getUser(userid) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', `${this.jwtToken}`);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastrService } from '../common/toastr.service'
+import { ToastrService } from '../common/toastr.service';
 import { UserService } from '../user/user.service';
 import { AuthService } from '../user/auth.service';
 import { IUser } from './user';
@@ -15,8 +15,7 @@ export class ProfileComponent implements OnInit {
   profileForm: FormGroup
   userObj: any;
   user: IUser;
-  
-  constructor(private fb: FormBuilder, 
+  constructor(private fb: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
     private router: Router,
